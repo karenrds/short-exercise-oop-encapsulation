@@ -60,6 +60,7 @@ public class Main {
         System.out.println("Let's make a lot of money right now! Let's change the account balance directly!");
         System.out.println("Oh no :( It looks like we can't do this - it's too secure!");
         //mySecureBankAccount.accountBalance = 1000000;
+
         mySecureBankAccount.displayAccountBalance();
         System.out.println("😹 Well I guess that's secure!");
     }

@@ -20,7 +20,7 @@ public class WeatherReporter {
     }
 
     public String check1() {
-        if (location == "London") {
+        /* if (location == "London") {
 
             return "🌦";
 
@@ -28,11 +28,11 @@ public class WeatherReporter {
 
             return "🌅";
 
-        } else if (location == "Cape Town") {
+        } else if (location  == "Cape Town") {
 
             return "🌤";
 
-        }
+        }*/
         return "🔆";
     }
 
