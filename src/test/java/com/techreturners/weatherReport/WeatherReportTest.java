@@ -14,7 +14,6 @@ public class WeatherReportTest {
         testReport = new WeatherReporter("London", 9);
     }
 
-
     @Test
     public void checkLocationIcon(){
         assertEquals("🌦", testReport.getLocationIcon("London"));
