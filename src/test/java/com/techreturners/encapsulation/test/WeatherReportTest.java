@@ -14,12 +14,17 @@ public class WeatherReportTest {
     }
 
     @Test
-    public void checkLocationIcon(){
+    public void checkLocationIcon() {
         assertEquals("🌦", testReport.getLocationIcon("London"));
     }
 
     @Test
     public void checkTemperature() {
         assertEquals("It's too cold 🥶!", testReport.getTemperature());
+    }
+
+    @Test
+    public void checkPrint() {
+        assertEquals("I am in London and it is 🌦. It's too cold 🥶!. The temperature in Fahrenheit is 48.2.", testReport.print());
     }
 }
