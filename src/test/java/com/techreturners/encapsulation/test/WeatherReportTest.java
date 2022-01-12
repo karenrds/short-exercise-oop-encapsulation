@@ -1,5 +1,4 @@
-package com.techreturners.weatherReport;
-
+package com.techreturners.encapsulation.test;
 import com.techreturners.encapsulation.bankaccount.model.WeatherReporter;
 import org.junit.Before;
 import org.junit.Test;
