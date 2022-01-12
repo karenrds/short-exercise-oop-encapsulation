@@ -13,13 +13,11 @@ public class WeatherReporter {
     }
 
     public String print() {
-
         double newTemp = (9.0 / 5.0) * temperature + 32;
-        return MessageFormat.format("I am in {0} and it is {1}. {2}. The temperature in Fahrenheit is {3}.", location, getLocationIcon(location), checkTemperature(), newTemp);
-
+        return MessageFormat.format("I am in {0} and it is {1}. {2}. The temperature in Fahrenheit is {3}.", location, getLocationIcon(location), getTemperature(), newTemp);
     }
 
-    private String getLocationIcon(String location) {
+    public String getLocationIcon(String location) {
         String result;
         switch (location) {
             case "London":
@@ -38,12 +36,9 @@ public class WeatherReporter {
         return result;
     }
 
-
-
-    private String checkTemperature() {
+    public String getTemperature() {
         String message;
         message = temperature > 30 ? "It's too hot 🥵!" : (temperature < 10 ? "It's too cold 🥶!" : "Ah hh...it's just right 😊!");
         return message;
     }
-
 }

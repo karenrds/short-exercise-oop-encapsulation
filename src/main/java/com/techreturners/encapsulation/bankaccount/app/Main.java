@@ -65,7 +65,8 @@ public class Main {
         mySecureBankAccount.displayAccountBalance();
         System.out.println("😹 Well I guess that's secure!");
 
-        //weather report
+        System.out.println("\n\n Weather Report");
+
         WeatherReporter firstWeatherReporter = new WeatherReporter("California",35);
         System.out.println(firstWeatherReporter.print());
 
