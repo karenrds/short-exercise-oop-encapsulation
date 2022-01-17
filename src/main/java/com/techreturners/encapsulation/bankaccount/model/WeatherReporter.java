@@ -19,7 +19,7 @@ public class WeatherReporter {
         return MessageFormat.format("I am in {0} and it is {1}. {2}. The temperature in Fahrenheit is {3}.", location, retrieveWeatherByLocation(location), getTemperature(), convertFromCelsiusToFahrenheit());
     }
 
-    public double convertFromCelsiusToFahrenheit() {
+    private double convertFromCelsiusToFahrenheit() {
         return (9.0 / 5.0) * temperature + 32;
     }
 
