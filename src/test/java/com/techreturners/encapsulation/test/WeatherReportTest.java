@@ -6,25 +6,47 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class WeatherReportTest {
-    private WeatherReporter testReport;
+    private WeatherReporter l1;
+    private WeatherReporter l2;
+    private WeatherReporter l3;
+
+    public WeatherReportTest() {
+    }
 
     @Before
     public void setup() {
-        testReport = new WeatherReporter("London", 9);
+         l1 = new WeatherReporter("London", 7.0);
+         l2 = new WeatherReporter("California", 35.0);
+         l3 = new WeatherReporter("Cape Town", 19.0);
     }
 
     @Test
-    public void checkLocationIcon() {
-        assertEquals("🌦", testReport.getLocationIcon("London"));
+    public void checkWeatherByLocation() {
+        assertEquals("🌦", l1.retrieveWeatherByLocation("London"));
+        assertEquals("🌅", l2.retrieveWeatherByLocation("California"));
+        assertEquals("🌤", l3.retrieveWeatherByLocation("Cape Town"));
+
     }
 
     @Test
     public void checkTemperature() {
-        assertEquals("It's too cold 🥶!", testReport.getTemperature());
+        assertEquals("It's too cold 🥶!", l1.getTemperature());
+        assertEquals("It's too hot 🥵!", l2.getTemperature());
+        assertEquals("Ah hh...it's just right 😊!", l3.getTemperature());
     }
 
     @Test
     public void checkPrint() {
-        assertEquals("I am in London and it is 🌦. It's too cold 🥶!. The temperature in Fahrenheit is 48.2.", testReport.print());
+        assertEquals("I am in London and it is 🌦. It's too cold 🥶!. The temperature in Fahrenheit is 44.6.", l1.print());
+        assertEquals("I am in California and it is 🌅. It's too hot 🥵!. The temperature in Fahrenheit is 95.0.", l2.print());
+        assertEquals("I am in Cape Town and it is 🌤. Ah hh...it's just right 😊!. The temperature in Fahrenheit is 66.2.", l3.print());
     }
+
+    @Test
+    public void checkFromCelsiusToFahrenheit() {
+        assertEquals(44.6, 44.6, l1.convertFromCelsiusToFahrenheit());
+        assertEquals(95.0, 95.0, l2.convertFromCelsiusToFahrenheit());
+        assertEquals(66.2, 66.2, l3.convertFromCelsiusToFahrenheit());
+    }
+
 }

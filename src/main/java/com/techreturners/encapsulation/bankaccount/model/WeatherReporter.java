@@ -6,6 +6,9 @@ public class WeatherReporter {
 
     private String location;
     private double temperature;
+    private final int COLD_THRESHOLD = 10;
+    private final int HOT_THRESHOLD = 30;
+
 
     public WeatherReporter(String location, double temperature) {
         this.location = location;
@@ -13,11 +16,14 @@ public class WeatherReporter {
     }
 
     public String print() {
-        double newTemp = (9.0 / 5.0) * temperature + 32;
-        return MessageFormat.format("I am in {0} and it is {1}. {2}. The temperature in Fahrenheit is {3}.", location, getLocationIcon(location), getTemperature(), newTemp);
+        return MessageFormat.format("I am in {0} and it is {1}. {2}. The temperature in Fahrenheit is {3}.", location, retrieveWeatherByLocation(location), getTemperature(), convertFromCelsiusToFahrenheit());
     }
 
-    public String getLocationIcon(String location) {
+    public double convertFromCelsiusToFahrenheit() {
+        return (9.0 / 5.0) * temperature + 32;
+    }
+
+    public String retrieveWeatherByLocation(String location) {
         String result;
         switch (location) {
             case "London":
@@ -38,7 +44,7 @@ public class WeatherReporter {
 
     public String getTemperature() {
         String message;
-        message = temperature > 30 ? "It's too hot 🥵!" : (temperature < 10 ? "It's too cold 🥶!" : "Ah hh...it's just right 😊!");
+        message = temperature > HOT_THRESHOLD ? "It's too hot 🥵!" : (temperature < COLD_THRESHOLD ? "It's too cold 🥶!" : "Ah hh...it's just right 😊!");
         return message;
     }
 }

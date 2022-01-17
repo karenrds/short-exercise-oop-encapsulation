@@ -67,11 +67,14 @@ public class Main {
 
         System.out.println("\n\n Weather Report");
 
-        WeatherReporter firstWeatherReporter = new WeatherReporter("California",35);
-        System.out.println(firstWeatherReporter.print());
+     WeatherReporter firstWeatherReporterCapeTown = new WeatherReporter("Cape Town",19.0);
+     System.out.println(firstWeatherReporterCapeTown.print());
 
-        WeatherReporter secondWeatherReporter = new WeatherReporter("London",9);
-        System.out.println(secondWeatherReporter.print());
+        WeatherReporter firstWeatherReporterCalifornia = new WeatherReporter("California",35.0);
+        System.out.println(firstWeatherReporterCalifornia.print());
+
+        WeatherReporter secondWeatherReporterLondon = new WeatherReporter("London",7.0);
+        System.out.println(secondWeatherReporterLondon.print());
 
     }
 
