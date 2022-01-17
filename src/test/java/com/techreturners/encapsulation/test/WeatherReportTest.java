@@ -41,12 +41,4 @@ public class WeatherReportTest {
         assertEquals("I am in California and it is 🌅. It's too hot 🥵!. The temperature in Fahrenheit is 95.0.", l2.print());
         assertEquals("I am in Cape Town and it is 🌤. Ah hh...it's just right 😊!. The temperature in Fahrenheit is 66.2.", l3.print());
     }
-
-    @Test
-    public void checkFromCelsiusToFahrenheit() {
-        assertEquals(44.6, 44.6, l1.convertFromCelsiusToFahrenheit());
-        assertEquals(95.0, 95.0, l2.convertFromCelsiusToFahrenheit());
-        assertEquals(66.2, 66.2, l3.convertFromCelsiusToFahrenheit());
-    }
-
 }

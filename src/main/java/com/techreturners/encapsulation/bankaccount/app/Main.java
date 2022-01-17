@@ -67,8 +67,8 @@ public class Main {
 
         System.out.println("\n\n Weather Report");
 
-     WeatherReporter firstWeatherReporterCapeTown = new WeatherReporter("Cape Town",19.0);
-     System.out.println(firstWeatherReporterCapeTown.print());
+        WeatherReporter firstWeatherReporterCapeTown = new WeatherReporter("Cape Town",19.0);
+        System.out.println(firstWeatherReporterCapeTown.print());
 
         WeatherReporter firstWeatherReporterCalifornia = new WeatherReporter("California",35.0);
         System.out.println(firstWeatherReporterCalifornia.print());
